@@ -1,0 +1,163 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+}
+
+/* Hamburger Menu  */
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 30px;
+  left: -25px;
+  z-index: 1;
+}
+/* Styling for checkbox  */
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Hamburger styling */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #808080;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+  * Transform all the spans for hamburger into an X.
+  */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #696969;
+}
+
+/*
+  * But hide the middle one.
+  */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background-color: white;
+  list-style-type: none;
+
+  /* location before clicking */
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+  * slide it in from the left
+  */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+/* End hamburger styling */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f6f6f6;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+div {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+a {
+  text-decoration: none;
+  color: #85a2a6;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+hr {
+  background-color: #a9a9a9;
+  border-color: #a9a9a9;
+  border-width: 0.5px;
+  margin: 0;
+}
+
+#Home a {
+  color: black;
+}
+
+p {
+  color: #696969;
+}
+/* 
+This determines the style and location of the list within the hamburger menu */
+
+ul {
+  display: block;
+  position: relative;
+  top: 30px;
+  left: -100px;
+  background-color: white;
+}
